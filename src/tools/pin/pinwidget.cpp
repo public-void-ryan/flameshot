@@ -68,9 +68,6 @@ PinWidget::PinWidget(const QPixmap& pixmap,
       static_cast<int>(static_cast<double>(MARGIN) * devicePixelRatio);
     QRect adjusted_pos = geometry + QMargins(margin, margin, margin, margin);
     setGeometry(adjusted_pos);
-#if defined(Q_OS_LINUX)
-    setWindowFlags(Qt::X11BypassWindowManagerHint);
-#endif
 
 #if defined(Q_OS_MACOS) || defined(Q_OS_LINUX)
     if (currentScreen != nullptr) {
